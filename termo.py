@@ -1,20 +1,14 @@
-def filtra(lista_palavras, num_letras):
-    palavras_filtradas = []
-    caracteres_permitidos = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 "
 
-    for palavra in lista_palavras:
-        palavra_filtrada = ""
-        for c in palavra:
-            if c in caracteres_permitidos:
-                palavra_filtrada += c
+import random
 
-        if len(palavra_filtrada) == num_letras:
-            presente = False
-            for p in palavras_filtradas:
-                if p.lower() == palavra_filtrada.lower():
-                    presente = True
-                    break
-            if not presente:
-                palavras_filtradas.append(palavra_filtrada.lower())
+def inicializa(palavras):
+    sorteado = random.randint(0, len(palavras) - 1)
+    
+    configuracao_jogo = {
+        'n': len(palavras[sorteado]),
+        'sorteada': palavras[sorteado],
+        'especuladas': [],
+        'tentativas': len(palavras[sorteado]) + 1
+    }
 
-    return palavras_filtradas
+    return configuracao_jogo
