@@ -12,4 +12,4 @@ def inidica_posicao(sorteada, especulada):
         else:
             posicoes.append(2)
 
-    return posicoe
+    return posicoes
